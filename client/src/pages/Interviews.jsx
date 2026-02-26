@@ -106,32 +106,32 @@ const Interviews = () => {
         }
     };
 
-    const InputClass = "w-full bg-transparent border-b border-white/20 text-white placeholder-blue-300/50 focus:border-blue-400 outline-none transition-all py-2";
-    const LabelClass = "block text-xs font-bold text-blue-300 mb-1 uppercase tracking-wider";
+    const InputClass = "w-full bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:border-blue-500 outline-none transition-all py-2 rounded-lg px-3 mt-1";
+    const LabelClass = "block text-xs font-bold text-slate-500 mb-1 uppercase tracking-wider";
 
     return (
         <div className="space-y-8 pb-20">
             {/* Header */}
-            <GravityCard className="p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-royal-600/20 rounded-full blur-3xl animate-float"></div>
+            <GravityCard className="p-8 relative overflow-hidden bg-white border-slate-200">
+                <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-royal-100 rounded-full blur-3xl animate-float"></div>
                 <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                     <div>
-                        <h1 className="text-4xl font-bold text-white mb-2 tracking-tight">Interview Node</h1>
-                        <p className="text-blue-200/80 max-w-xl">
+                        <h1 className="text-4xl font-bold text-slate-900 mb-2 tracking-tight">Interview Node</h1>
+                        <p className="text-slate-600 max-w-xl">
                             Coordinate and secure your interview slots. Manage your trajectory towards career success.
                         </p>
                     </div>
 
-                    <div className="flex bg-white/5 p-1 rounded-xl border border-white/10 backdrop-blur-md">
+                    <div className="flex bg-white p-1 rounded-xl border border-slate-200 shadow-sm backdrop-blur-md">
                         <button
                             onClick={() => setView('student')}
-                            className={`px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${view === 'student' ? 'bg-gradient-to-r from-royal-600 to-purple-600 text-white shadow-lg' : 'text-slate-400 hover:text-white'}`}
+                            className={`px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${view === 'student' ? 'bg-slate-100 text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-900'}`}
                         >
                             Candidate View
                         </button>
                         <button
                             onClick={() => setView('admin')}
-                            className={`px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${view === 'admin' ? 'bg-gradient-to-r from-royal-600 to-purple-600 text-white shadow-lg' : 'text-slate-400 hover:text-white'}`}
+                            className={`px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${view === 'admin' ? 'bg-slate-100 text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-900'}`}
                         >
                             Admin Control
                         </button>
@@ -144,14 +144,14 @@ const Interviews = () => {
                 {/* Left Column: Upcoming / Slots */}
                 <div className="lg:col-span-2 space-y-6">
                     <div className="flex justify-between items-center">
-                        <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-                            <Calendar className="text-blue-400" />
+                        <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
+                            <Calendar className="text-blue-600" />
                             {view === 'student' ? 'Available Slots' : 'Manage Slots'}
                         </h2>
                         {view === 'admin' && (
                             <button
                                 onClick={() => setShowSlotForm(!showSlotForm)}
-                                className="flex items-center gap-2 px-4 py-2 bg-blue-600/20 text-blue-300 border border-blue-500/30 rounded-lg hover:bg-blue-600 hover:text-white transition-all font-bold"
+                                className="flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-600 hover:text-white transition-all font-bold shadow-sm"
                             >
                                 <Plus size={18} /> Create Slot
                             </button>
@@ -166,8 +166,8 @@ const Interviews = () => {
                                 exit={{ opacity: 0, height: 0 }}
                                 className="overflow-hidden"
                             >
-                                <GravityCard className="p-6 border-blue-500/30 bg-blue-900/10">
-                                    <h3 className="text-lg font-bold text-white mb-6 border-b border-white/10 pb-2">New Interview Slot</h3>
+                                <GravityCard className="p-6 border-blue-200 bg-blue-50 shadow-sm">
+                                    <h3 className="text-lg font-bold text-slate-900 mb-6 border-b border-blue-200 pb-2">New Interview Slot</h3>
                                     <form onSubmit={handleCreateSlot} className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div>
                                             <label className={LabelClass}>Company</label>
@@ -196,7 +196,7 @@ const Interviews = () => {
                                             <input className={InputClass} value={slotFormData.location} onChange={(e) => setSlotFormData({ ...slotFormData, location: e.target.value })} placeholder="Video Call Link or Office Address" required />
                                         </div>
                                         <div className="md:col-span-2 pt-4">
-                                            <button type="submit" className="w-full py-3 bg-gradient-to-r from-royal-600 to-purple-600 rounded-xl text-white font-bold hover:shadow-lg hover:shadow-blue-500/25 transition-all">
+                                            <button type="submit" className="w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl text-white font-bold hover:shadow-md transition-all">
                                                 Initialize Slot
                                             </button>
                                         </div>
@@ -210,26 +210,26 @@ const Interviews = () => {
                         {loading ? (
                             <div className="flex justify-center p-12"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div></div>
                         ) : slots.length === 0 ? (
-                            <GravityCard className="p-12 text-center flex flex-col items-center justify-center">
-                                <div className="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mb-4">
-                                    <Calendar className="text-slate-500" size={32} />
+                            <GravityCard className="p-12 text-center flex flex-col items-center justify-center bg-white border border-slate-200 shadow-sm border-dashed">
+                                <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mb-4">
+                                    <Calendar className="text-slate-400" size={32} />
                                 </div>
-                                <h3 className="text-xl font-bold text-white">No Slots Available</h3>
-                                <p className="text-slate-400 mt-2">Check back later for new interview opportunities.</p>
+                                <h3 className="text-xl font-bold text-slate-900">No Slots Available</h3>
+                                <p className="text-slate-500 mt-2">Check back later for new interview opportunities.</p>
                             </GravityCard>
                         ) : (
                             slots.map((slot) => (
-                                <GravityCard key={slot._id} className="p-6 group hover:translate-x-2">
+                                <GravityCard key={slot._id} className="p-6 group hover:translate-x-2 bg-white border border-slate-200 shadow-sm">
                                     <div className="flex flex-col md:flex-row justify-between gap-6">
                                         <div className="flex-1">
                                             <div className="flex items-center gap-3 mb-2">
-                                                <h3 className="text-xl font-bold text-white group-hover:text-blue-300 transition-colors">{slot.position}</h3>
-                                                <span className="px-2 py-0.5 rounded textxs font-bold bg-white/10 text-slate-300 border border-white/5">
+                                                <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{slot.position}</h3>
+                                                <span className="px-2 py-0.5 rounded textxs font-bold bg-slate-100 text-slate-600 border border-slate-200">
                                                     {slot.company}
                                                 </span>
                                             </div>
 
-                                            <div className="flex flex-wrap gap-4 text-sm text-slate-400">
+                                            <div className="flex flex-wrap gap-4 text-sm text-slate-600">
                                                 <span className="flex items-center gap-1.5"><Calendar size={14} className="text-blue-500" /> {new Date(slot.date).toLocaleDateString()}</span>
                                                 <span className="flex items-center gap-1.5"><Clock size={14} className="text-purple-500" /> {slot.startTime} - {slot.endTime}</span>
                                                 <span className="flex items-center gap-1.5"><MapPin size={14} className="text-pink-500" /> {slot.location}</span>
@@ -237,28 +237,28 @@ const Interviews = () => {
 
                                             {view === 'admin' && (
                                                 <div className="mt-4 flex items-center gap-2">
-                                                    <div className="h-1.5 w-32 bg-white/10 rounded-full overflow-hidden">
+                                                    <div className="h-1.5 w-32 bg-slate-200 rounded-full overflow-hidden">
                                                         <div className="h-full bg-blue-500" style={{ width: `${(slot.attendees?.length || 0) / slot.maxCapacity * 100}%` }}></div>
                                                     </div>
-                                                    <span className="text-xs text-slate-400">{slot.attendees?.length || 0} / {slot.maxCapacity} Candidates</span>
+                                                    <span className="text-xs text-slate-500">{slot.attendees?.length || 0} / {slot.maxCapacity} Candidates</span>
                                                 </div>
                                             )}
                                         </div>
 
                                         <div className="flex items-center gap-3 self-end md:self-center">
                                             {view === 'admin' ? (
-                                                <button onClick={() => handleDeleteSlot(slot._id)} className="p-3 bg-red-500/10 text-red-400 rounded-xl hover:bg-red-500 hover:text-white transition-colors border border-red-500/20">
+                                                <button onClick={() => handleDeleteSlot(slot._id)} className="p-3 bg-red-50 text-red-500 rounded-xl hover:bg-red-500 hover:text-white transition-colors border border-red-200">
                                                     <Trash2 size={18} />
                                                 </button>
                                             ) : (
                                                 <button
                                                     onClick={() => handleBookSlot(slot._id)}
                                                     disabled={slot.attendees?.includes(user?._id) || (slot.attendees?.length >= slot.maxCapacity)}
-                                                    className={`px-6 py-3 rounded-xl font-bold flex items-center gap-2 transition-all ${slot.attendees?.includes(user?._id)
-                                                        ? 'bg-green-500/20 text-green-400 border border-green-500/30 cursor-default'
+                                                    className={`px-6 py-3 rounded-xl font-bold flex items-center gap-2 transition-all shadow-sm ${slot.attendees?.includes(user?._id)
+                                                        ? 'bg-green-50 text-green-600 border border-green-200 cursor-default'
                                                         : slot.attendees?.length >= slot.maxCapacity
-                                                            ? 'bg-slate-700/50 text-slate-500 cursor-not-allowed'
-                                                            : 'bg-white/10 text-white hover:bg-blue-600 hover:shadow-lg hover:border-blue-500/50 border border-white/10'
+                                                            ? 'bg-slate-100 text-slate-400 cursor-not-allowed border border-slate-200'
+                                                            : 'bg-white text-slate-900 border border-slate-200 hover:bg-blue-600 hover:text-white hover:border-blue-600'
                                                         }`}
                                                 >
                                                     {slot.attendees?.includes(user?._id) ? (
@@ -280,49 +280,49 @@ const Interviews = () => {
 
                 {/* Right Column: User's Bookings */}
                 <div className="space-y-6">
-                    <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-                        <CheckCircle className="text-green-400" />
+                    <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
+                        <CheckCircle className="text-green-500" />
                         My Bookings
                     </h2>
 
                     <div className="space-y-4">
                         {myBookings.length === 0 ? (
-                            <GravityCard className="p-8 text-center border-dashed border-white/20">
-                                <p className="text-slate-400">You haven't booked any interviews yet.</p>
+                            <GravityCard className="p-8 text-center border-dashed border-slate-300 bg-white shadow-sm">
+                                <p className="text-slate-500">You haven't booked any interviews yet.</p>
                             </GravityCard>
                         ) : (
                             myBookings.map((booking) => (
-                                <GravityCard key={booking._id} className="p-5 relative overflow-hidden group">
-                                    <div className="absolute top-0 right-0 w-20 h-20 bg-green-500/10 rounded-full blur-xl -mr-10 -mt-10 group-hover:bg-green-500/20 transition-all"></div>
+                                <GravityCard key={booking._id} className="p-5 relative overflow-hidden group bg-white border border-slate-200 shadow-sm">
+                                    <div className="absolute top-0 right-0 w-20 h-20 bg-green-100 rounded-full blur-xl -mr-10 -mt-10 group-hover:bg-green-200 transition-all"></div>
 
                                     <div className="relative z-10">
                                         <div className="flex justify-between items-start mb-3">
                                             <div>
-                                                <h4 className="font-bold text-lg text-white">{booking.position}</h4>
-                                                <p className="text-sm text-blue-300">{booking.company}</p>
+                                                <h4 className="font-bold text-lg text-slate-900">{booking.position}</h4>
+                                                <p className="text-sm text-blue-600">{booking.company}</p>
                                             </div>
-                                            <button onClick={() => handleCancelBooking(booking._id)} className="text-red-400 hover:text-red-300 transition-colors p-1">
+                                            <button onClick={() => handleCancelBooking(booking._id)} className="text-red-500 hover:text-red-600 transition-colors p-1 bg-red-50 rounded-md">
                                                 <XCircle size={18} />
                                             </button>
                                         </div>
 
-                                        <div className="space-y-2 text-sm text-slate-300">
+                                        <div className="space-y-2 text-sm text-slate-600">
                                             <div className="flex items-center gap-2">
-                                                <Calendar size={14} className="text-slate-500" />
+                                                <Calendar size={14} className="text-slate-400" />
                                                 {new Date(booking.date).toLocaleDateString()}
                                             </div>
                                             <div className="flex items-center gap-2">
-                                                <Clock size={14} className="text-slate-500" />
+                                                <Clock size={14} className="text-slate-400" />
                                                 {booking.startTime}
                                             </div>
                                         </div>
 
-                                        <div className="mt-4 pt-4 border-t border-white/10 flex justify-between items-center">
-                                            <span className="text-xs font-bold text-green-400 uppercase tracking-wider flex items-center gap-1">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></div>
+                                        <div className="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center">
+                                            <span className="text-xs font-bold text-green-600 uppercase tracking-wider flex items-center gap-1">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
                                                 Confirmed
                                             </span>
-                                            <a href={booking.location} target="_blank" rel="noreferrer" className="text-xs text-blue-400 hover:text-white transition-colors">
+                                            <a href={booking.location} target="_blank" rel="noreferrer" className="text-xs text-blue-600 hover:text-blue-700 transition-colors font-semibold">
                                                 Open Link &rarr;
                                             </a>
                                         </div>

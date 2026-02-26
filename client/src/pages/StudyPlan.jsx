@@ -118,24 +118,24 @@ const StudyPlan = () => {
         return Math.round((completed / topics.length) * 100);
     };
 
-    const InputClass = "w-full bg-transparent border-b border-white/20 text-white placeholder-blue-300/50 focus:border-blue-400 outline-none transition-all py-2";
-    const LabelClass = "block text-xs font-bold text-blue-300 mb-1 uppercase tracking-wider";
+    const InputClass = "w-full bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:border-blue-500 outline-none transition-all py-2 rounded-lg px-3 mt-1";
+    const LabelClass = "block text-xs font-bold text-slate-500 mb-1 uppercase tracking-wider";
 
     return (
         <div className="space-y-8 pb-20">
             {/* Header */}
-            <GravityCard className="p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-purple-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
+            <GravityCard className="p-8 relative overflow-hidden bg-white border-slate-200 shadow-sm">
+                <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-purple-100 rounded-full blur-3xl animate-pulse-slow"></div>
                 <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                     <div>
-                        <h1 className="text-4xl font-bold text-white mb-2 tracking-tight">Study Modules</h1>
-                        <p className="text-blue-200/80 max-w-xl">
+                        <h1 className="text-4xl font-bold text-slate-900 mb-2 tracking-tight">Study Modules</h1>
+                        <p className="text-slate-600 max-w-xl">
                             AI-powered curriculum generation and progress tracking. Master your domain.
                         </p>
                     </div>
                     <button
                         onClick={() => setShowForm(!showForm)}
-                        className="px-6 py-3 bg-gradient-to-r from-royal-600 to-purple-600 rounded-xl text-white font-bold hover:shadow-lg hover:shadow-blue-500/25 transition-all flex items-center gap-2 group"
+                        className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl text-white font-bold hover:shadow-md transition-all flex items-center gap-2 group"
                     >
                         <Plus size={20} className="group-hover:rotate-90 transition-transform" /> New Study Module
                     </button>
@@ -151,8 +151,8 @@ const StudyPlan = () => {
                         exit={{ opacity: 0, height: 0 }}
                         className="overflow-hidden"
                     >
-                        <GravityCard className="p-6 border-blue-500/30 bg-blue-900/10 mb-8">
-                            <h3 className="text-lg font-bold text-white mb-6 border-b border-white/10 pb-2">Initialize New Module</h3>
+                        <GravityCard className="p-6 border-blue-200 bg-blue-50 shadow-sm mb-8">
+                            <h3 className="text-lg font-bold text-slate-900 mb-6 border-b border-blue-200 pb-2">Initialize New Module</h3>
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-4">
@@ -179,15 +179,15 @@ const StudyPlan = () => {
                                     </div>
 
                                     <div className="space-y-4">
-                                        <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-blue-400/50 transition-colors">
+                                        <div className="p-4 rounded-xl bg-white border border-slate-200 hover:border-blue-400 transition-colors shadow-sm">
                                             <label className={`${LabelClass} mb-2 flex items-center gap-2`}>
-                                                <Sparkles size={14} className="text-purple-400" /> AI Generation (Optional)
+                                                <Sparkles size={14} className="text-purple-600" /> AI Generation (Optional)
                                             </label>
                                             <input
                                                 type="file"
                                                 accept=".pdf,.png,.jpg"
                                                 onChange={(e) => setFile(e.target.files[0])}
-                                                className="w-full text-sm text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-600/20 file:text-blue-300 hover:file:bg-blue-600/30 transition-all cursor-pointer"
+                                                className="w-full text-sm text-slate-600 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-600 hover:file:bg-blue-100 transition-all cursor-pointer"
                                             />
                                             <p className="text-xs text-slate-500 mt-2">Upload syllabus PDF to auto-generate topics.</p>
                                         </div>
@@ -208,7 +208,7 @@ const StudyPlan = () => {
                                     <button
                                         type="submit"
                                         disabled={aiLoading}
-                                        className="px-8 py-3 bg-gradient-to-r from-royal-600 to-purple-600 rounded-xl text-white font-bold hover:shadow-lg hover:shadow-purple-500/25 transition-all disabled:opacity-50 disabled:cursor-wait"
+                                        className="px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl text-white font-bold hover:shadow-md transition-all disabled:opacity-50 disabled:cursor-wait"
                                     >
                                         {aiLoading ? 'Analyzing Syllabus...' : 'Create Module'}
                                     </button>
@@ -224,12 +224,12 @@ const StudyPlan = () => {
                 {loading ? (
                     <div className="flex justify-center p-12"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div></div>
                 ) : plans.length === 0 ? (
-                    <GravityCard className="p-12 text-center flex flex-col items-center justify-center border-dashed border-white/20">
-                        <div className="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mb-4">
-                            <BookOpen className="text-slate-500" size={32} />
+                    <GravityCard className="p-12 text-center flex flex-col items-center justify-center border-dashed border-slate-300 bg-white shadow-sm">
+                        <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mb-4">
+                            <BookOpen className="text-slate-400" size={32} />
                         </div>
-                        <h3 className="text-xl font-bold text-white">No active modules</h3>
-                        <p className="text-slate-400 mt-2">Create a study plan to begin tracking your progress.</p>
+                        <h3 className="text-xl font-bold text-slate-900">No active modules</h3>
+                        <p className="text-slate-500 mt-2">Create a study plan to begin tracking your progress.</p>
                     </GravityCard>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -238,20 +238,20 @@ const StudyPlan = () => {
                             const isExpanded = expandedPlan === plan._id;
 
                             return (
-                                <GravityCard key={plan._id} className="group hover:shadow-antigravity-hover transition-all duration-500">
+                                <GravityCard key={plan._id} className="group hover:-translate-y-1 transition-all duration-300 bg-white border border-slate-200 shadow-sm">
                                     <div className="p-6">
                                         <div className="flex justify-between items-start mb-4">
                                             <div>
-                                                <h3 className="text-xl font-bold text-white group-hover:text-blue-300 transition-colors">{plan.subject}</h3>
-                                                <p className="text-sm text-slate-400 flex items-center gap-1.5 mt-1">
-                                                    <Target size={14} className="text-purple-400" />
+                                                <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{plan.subject}</h3>
+                                                <p className="text-sm text-slate-500 flex items-center gap-1.5 mt-1">
+                                                    <Target size={14} className="text-purple-500" />
                                                     Target: {new Date(plan.examDate).toLocaleDateString()}
                                                 </p>
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <button
                                                     onClick={() => deletePlan(plan._id)}
-                                                    className="p-2 text-slate-500 hover:text-red-400 hover:bg-white/5 rounded-lg transition-colors"
+                                                    className="p-2 text-slate-400 hover:text-red-500 hover:bg-slate-50 rounded-lg transition-colors"
                                                 >
                                                     <Trash2 size={18} />
                                                 </button>
@@ -259,14 +259,14 @@ const StudyPlan = () => {
                                         </div>
 
                                         <div className="flex items-end justify-between mb-2">
-                                            <span className="text-sm font-bold text-slate-400">{progress}% Complete</span>
-                                            <span className="text-xs text-blue-400 font-mono">{plan.topics.filter(t => t.completed).length}/{plan.topics.length} Nodes</span>
+                                            <span className="text-sm font-bold text-slate-700">{progress}% Complete</span>
+                                            <span className="text-xs text-blue-500 font-mono">{plan.topics.filter(t => t.completed).length}/{plan.topics.length} Nodes</span>
                                         </div>
-                                        <LiquidProgressBar progress={progress} color="bg-gradient-to-r from-blue-500 to-purple-500" height="h-3" className="mb-6" />
+                                        <LiquidProgressBar progress={progress} color="bg-gradient-to-r from-blue-500 to-indigo-500" height="h-3" className="mb-6" />
 
                                         <button
                                             onClick={() => setExpandedPlan(isExpanded ? null : plan._id)}
-                                            className="w-full py-2 flex items-center justify-center gap-2 text-sm font-bold text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 rounded-lg transition-all"
+                                            className="w-full py-2 flex items-center justify-center gap-2 text-sm font-bold text-slate-600 hover:text-blue-600 bg-slate-50 hover:bg-slate-100 rounded-lg transition-all border border-slate-200"
                                         >
                                             {isExpanded ? 'Collapse Module' : 'Expand Module'}
                                             {isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
@@ -279,19 +279,19 @@ const StudyPlan = () => {
                                                 initial={{ height: 0 }}
                                                 animate={{ height: 'auto' }}
                                                 exit={{ height: 0 }}
-                                                className="overflow-hidden border-t border-white/5 bg-black/20"
+                                                className="overflow-hidden border-t border-slate-100 bg-slate-50/50"
                                             >
                                                 <div className="p-6 space-y-2">
                                                     {plan.topics.map((topic, index) => (
                                                         <div
                                                             key={index}
                                                             onClick={() => toggleTopic(plan._id, index)}
-                                                            className="flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 cursor-pointer group/topic transition-colors"
+                                                            className="flex items-start gap-3 p-3 rounded-lg hover:bg-white border border-transparent hover:border-slate-200 hover:shadow-sm cursor-pointer group/topic transition-all"
                                                         >
-                                                            <div className={`mt-0.5 transition-colors ${topic.completed ? 'text-green-400' : 'text-slate-600 group-hover/topic:text-blue-400'}`}>
+                                                            <div className={`mt-0.5 transition-colors ${topic.completed ? 'text-green-500' : 'text-slate-400 group-hover/topic:text-blue-500'}`}>
                                                                 {topic.completed ? <CheckSquare size={20} /> : <Square size={20} />}
                                                             </div>
-                                                            <span className={`text-sm transition-all ${topic.completed ? 'text-slate-500 line-through' : 'text-slate-300 group-hover/topic:text-white'}`}>
+                                                            <span className={`text-sm transition-all ${topic.completed ? 'text-slate-400 line-through' : 'text-slate-700 group-hover/topic:text-slate-900'}`}>
                                                                 {topic.name}
                                                             </span>
                                                         </div>

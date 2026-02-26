@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
     const isAuthPage = location.pathname === '/login' || location.pathname === '/signup';
 
     return (
-        <div className="min-h-screen flex relative text-slate-200 font-sans">
+        <div className="min-h-screen flex relative text-slate-900 font-sans">
             <AbyssBackground />
 
             {!isAuthPage && <Sidebar />}

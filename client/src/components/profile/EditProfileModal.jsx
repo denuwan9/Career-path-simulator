@@ -54,31 +54,31 @@ const EditProfileModal = ({ isOpen, onClose, userData, onSave }) => {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm">
             <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                className="bg-[#0f172a] border border-white/10 w-full max-w-5xl h-[90vh] rounded-3xl overflow-hidden flex flex-col shadow-2xl"
+                className="bg-white border border-slate-200 w-full max-w-5xl h-[90vh] rounded-3xl overflow-hidden flex flex-col shadow-2xl"
             >
                 {/* Header */}
-                <div className="flex justify-between items-center p-6 border-b border-white/10 bg-glass-100">
-                    <h2 className="text-2xl font-bold text-white">Edit Profile</h2>
-                    <button onClick={onClose} className="p-2 rounded-full hover:bg-white/10 text-slate-400 hover:text-white transition-colors">
+                <div className="flex justify-between items-center p-6 border-b border-slate-100 bg-slate-50/50">
+                    <h2 className="text-2xl font-bold text-slate-900">Edit Profile</h2>
+                    <button onClick={onClose} className="p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-600 transition-colors">
                         <X size={24} />
                     </button>
                 </div>
 
                 <div className="flex flex-1 overflow-hidden">
                     {/* Sidebar Tabs */}
-                    <div className="w-64 bg-slate-900/50 border-r border-white/5 p-4 space-y-2 overflow-y-auto">
+                    <div className="w-64 bg-slate-50 border-r border-slate-100 p-4 space-y-2 overflow-y-auto">
                         {tabs.map(tab => (
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
                                 className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all ${activeTab === tab.id
-                                        ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25'
-                                        : 'text-slate-400 hover:bg-white/5 hover:text-white'
+                                    ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20'
+                                    : 'text-slate-500 hover:bg-slate-100 hover:text-slate-900'
                                     }`}
                             >
                                 <tab.icon size={18} />
@@ -88,7 +88,7 @@ const EditProfileModal = ({ isOpen, onClose, userData, onSave }) => {
                     </div>
 
                     {/* Content Area */}
-                    <div className="flex-1 p-8 overflow-y-auto bg-[#0f172a]">
+                    <div className="flex-1 p-8 overflow-y-auto bg-white">
 
                         {/* Basic Info Tab */}
                         {activeTab === 'basic' && (
@@ -103,16 +103,16 @@ const EditProfileModal = ({ isOpen, onClose, userData, onSave }) => {
                                 </div>
                                 <InputGroup label="Profile Image URL" name="profileImage" value={formData.profileImage} onChange={handleChange} placeholder="https://..." />
                                 <div>
-                                    <label className="block text-sm text-slate-400 mb-2">Short Bio</label>
+                                    <label className="block text-sm text-slate-500 mb-2">Short Bio</label>
                                     <textarea
                                         name="bio"
                                         value={formData.bio}
                                         onChange={handleChange}
-                                        className="w-full bg-slate-800/50 border border-white/10 rounded-xl p-4 text-white focus:border-blue-500 outline-none h-32 resize-none"
+                                        className="w-full bg-white border border-slate-200 rounded-xl p-4 text-slate-900 focus:border-blue-500 outline-none h-32 resize-none transition-colors"
                                     />
                                 </div>
-                                <div className="pt-6 border-t border-white/10">
-                                    <h3 className="text-lg font-bold text-white mb-4">Social Links</h3>
+                                <div className="pt-6 border-t border-slate-100">
+                                    <h3 className="text-lg font-bold text-slate-900 mb-4">Social Links</h3>
                                     <div className="grid grid-cols-2 gap-6">
                                         <InputGroup label="LinkedIn" name="socialLinks.linkedin" value={formData.socialLinks?.linkedin || ''} onChange={handleChange} />
                                         <InputGroup label="GitHub" name="socialLinks.github" value={formData.socialLinks?.github || ''} onChange={handleChange} />
@@ -129,25 +129,25 @@ const EditProfileModal = ({ isOpen, onClose, userData, onSave }) => {
                                 {/* Tech Skills */}
                                 <div>
                                     <div className="flex justify-between items-center mb-4">
-                                        <h3 className="text-lg font-bold text-white">Technical Skills</h3>
-                                        <button onClick={() => addItem('skills', { name: '', level: 80 })} className="text-sm bg-blue-500/20 text-blue-300 px-3 py-1.5 rounded-lg hover:bg-blue-500/30 transition-colors">+ Add Skill</button>
+                                        <h3 className="text-lg font-bold text-slate-900">Technical Skills</h3>
+                                        <button onClick={() => addItem('skills', { name: '', level: 80 })} className="text-sm bg-blue-50 text-blue-600 px-3 py-1.5 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors">+ Add Skill</button>
                                     </div>
                                     <div className="space-y-3">
                                         {formData.skills.map((skill, index) => (
-                                            <div key={index} className="flex gap-4 items-center bg-slate-800/30 p-3 rounded-xl border border-white/5">
+                                            <div key={index} className="flex gap-4 items-center bg-slate-50 p-3 rounded-xl border border-slate-200">
                                                 <input
                                                     value={typeof skill === 'string' ? skill : skill.name}
                                                     onChange={(e) => handleArrayChange(index, 'skills', typeof skill === 'string' ? null : 'name', e.target.value)}
                                                     placeholder="Skill Name (e.g. React)"
-                                                    className="bg-transparent border-b border-white/10 text-white px-2 py-1 flex-1 focus:border-blue-500 outline-none"
+                                                    className="bg-transparent border-b border-slate-300 text-slate-900 px-2 py-1 flex-1 focus:border-blue-500 outline-none transition-colors"
                                                 />
                                                 <div className="flex items-center gap-2">
-                                                    <span className="text-xs text-slate-400">Level:</span>
+                                                    <span className="text-xs text-slate-500">Level:</span>
                                                     <input
                                                         type="number"
                                                         value={typeof skill === 'string' ? 80 : skill.level}
                                                         onChange={(e) => handleArrayChange(index, 'skills', 'level', parseInt(e.target.value))}
-                                                        className="bg-slate-900 border border-white/10 rounded w-16 px-2 py-1 text-white text-sm"
+                                                        className="bg-white border border-slate-200 rounded w-16 px-2 py-1 text-slate-900 text-sm outline-none focus:border-blue-500 transition-colors"
                                                         min="0" max="100"
                                                     />
                                                 </div>
@@ -160,22 +160,22 @@ const EditProfileModal = ({ isOpen, onClose, userData, onSave }) => {
                                 {/* Languages */}
                                 <div>
                                     <div className="flex justify-between items-center mb-4">
-                                        <h3 className="text-lg font-bold text-white">Languages</h3>
-                                        <button onClick={() => addItem('languages', { name: '', proficiency: 'Basic' })} className="text-sm bg-green-500/20 text-green-300 px-3 py-1.5 rounded-lg hover:bg-green-500/30 transition-colors">+ Add Language</button>
+                                        <h3 className="text-lg font-bold text-slate-900">Languages</h3>
+                                        <button onClick={() => addItem('languages', { name: '', proficiency: 'Basic' })} className="text-sm bg-green-50 text-green-600 px-3 py-1.5 border border-green-200 rounded-lg hover:bg-green-100 transition-colors">+ Add Language</button>
                                     </div>
                                     <div className="space-y-3">
                                         {formData.languages.map((lang, index) => (
-                                            <div key={index} className="flex gap-4 items-center bg-slate-800/30 p-3 rounded-xl border border-white/5">
+                                            <div key={index} className="flex gap-4 items-center bg-slate-50 p-3 rounded-xl border border-slate-200">
                                                 <input
                                                     value={lang.name}
                                                     onChange={(e) => handleArrayChange(index, 'languages', 'name', e.target.value)}
                                                     placeholder="Language"
-                                                    className="bg-transparent border-b border-white/10 text-white px-2 py-1 flex-1 focus:border-green-500 outline-none"
+                                                    className="bg-transparent border-b border-slate-300 text-slate-900 px-2 py-1 flex-1 focus:border-green-500 outline-none transition-colors"
                                                 />
                                                 <select
                                                     value={lang.proficiency}
                                                     onChange={(e) => handleArrayChange(index, 'languages', 'proficiency', e.target.value)}
-                                                    className="bg-slate-900 border border-white/10 rounded px-3 py-1.5 text-white text-sm outline-none"
+                                                    className="bg-white border border-slate-200 rounded px-3 py-1.5 text-slate-900 text-sm outline-none focus:border-green-500 transition-colors"
                                                 >
                                                     <option>Basic</option>
                                                     <option>Fluent</option>
@@ -198,7 +198,7 @@ const EditProfileModal = ({ isOpen, onClose, userData, onSave }) => {
                                     </button>
                                 </div>
                                 {formData.education.map((edu, index) => (
-                                    <div key={index} className="bg-slate-800/30 p-6 rounded-2xl border border-white/5 relative group">
+                                    <div key={index} className="bg-slate-50 p-6 rounded-2xl border border-slate-200 relative group">
                                         <button onClick={() => removeItem('education', index)} className="absolute top-4 right-4 text-slate-500 hover:text-red-400 opacity-0 group-hover:opacity-100 transition-opacity"><Trash2 size={20} /></button>
                                         <div className="grid grid-cols-2 gap-4 mb-4">
                                             <InputGroup label="Institution" value={edu.institution} onChange={(e) => handleArrayChange(index, 'education', 'institution', e.target.value)} />
@@ -207,11 +207,11 @@ const EditProfileModal = ({ isOpen, onClose, userData, onSave }) => {
                                             <InputGroup label="GPA" value={edu.gpa} onChange={(e) => handleArrayChange(index, 'education', 'gpa', e.target.value)} />
                                         </div>
                                         <div>
-                                            <label className="block text-sm text-slate-400 mb-1">Description</label>
+                                            <label className="block text-sm text-slate-500 mb-1">Description</label>
                                             <textarea
                                                 value={edu.description}
                                                 onChange={(e) => handleArrayChange(index, 'education', 'description', e.target.value)}
-                                                className="w-full bg-slate-900 border border-white/10 rounded-xl p-3 text-white focus:border-blue-500 outline-none h-20 resize-none"
+                                                className="w-full bg-white border border-slate-200 rounded-xl p-3 text-slate-900 focus:border-blue-500 outline-none h-20 resize-none transition-colors"
                                             />
                                         </div>
                                     </div>
@@ -228,7 +228,7 @@ const EditProfileModal = ({ isOpen, onClose, userData, onSave }) => {
                                     </button>
                                 </div>
                                 {formData.projects.map((proj, index) => (
-                                    <div key={index} className="bg-slate-800/30 p-6 rounded-2xl border border-white/5 relative group">
+                                    <div key={index} className="bg-slate-50 p-6 rounded-2xl border border-slate-200 relative group">
                                         <button onClick={() => removeItem('projects', index)} className="absolute top-4 right-4 text-slate-500 hover:text-red-400 opacity-0 group-hover:opacity-100 transition-opacity"><Trash2 size={20} /></button>
                                         <div className="grid grid-cols-2 gap-4 mb-4">
                                             <InputGroup label="Project Title" value={proj.title} onChange={(e) => handleArrayChange(index, 'projects', 'title', e.target.value)} />
@@ -237,19 +237,19 @@ const EditProfileModal = ({ isOpen, onClose, userData, onSave }) => {
                                             <InputGroup label="Demo Link" value={proj.demoLink} onChange={(e) => handleArrayChange(index, 'projects', 'demoLink', e.target.value)} />
                                         </div>
                                         <div className="mb-4">
-                                            <label className="block text-sm text-slate-400 mb-1">Tech Stack (comma separated)</label>
+                                            <label className="block text-sm text-slate-500 mb-1">Tech Stack (comma separated)</label>
                                             <input
                                                 value={Array.isArray(proj.tags) ? proj.tags.join(', ') : proj.tags}
                                                 onChange={(e) => handleArrayChange(index, 'projects', 'tags', e.target.value.split(',').map(t => t.trim()))}
-                                                className="w-full bg-slate-900 border border-white/10 rounded-xl p-3 text-white focus:border-purple-500 outline-none"
+                                                className="w-full bg-white border border-slate-200 rounded-xl p-3 text-slate-900 focus:border-purple-500 outline-none transition-colors"
                                             />
                                         </div>
                                         <div>
-                                            <label className="block text-sm text-slate-400 mb-1">Description</label>
+                                            <label className="block text-sm text-slate-500 mb-1">Description</label>
                                             <textarea
                                                 value={proj.description}
                                                 onChange={(e) => handleArrayChange(index, 'projects', 'description', e.target.value)}
-                                                className="w-full bg-slate-900 border border-white/10 rounded-xl p-3 text-white focus:border-purple-500 outline-none h-20 resize-none"
+                                                className="w-full bg-white border border-slate-200 rounded-xl p-3 text-slate-900 focus:border-purple-500 outline-none h-20 resize-none transition-colors"
                                             />
                                         </div>
                                     </div>
@@ -265,7 +265,7 @@ const EditProfileModal = ({ isOpen, onClose, userData, onSave }) => {
                                     </button>
                                 </div>
                                 {formData.experience.map((exp, index) => (
-                                    <div key={index} className="bg-slate-800/30 p-6 rounded-2xl border border-white/5 relative group">
+                                    <div key={index} className="bg-slate-50 p-6 rounded-2xl border border-slate-200 relative group">
                                         <button onClick={() => removeItem('experience', index)} className="absolute top-4 right-4 text-slate-500 hover:text-red-400 opacity-0 group-hover:opacity-100 transition-opacity"><Trash2 size={20} /></button>
                                         <div className="grid grid-cols-2 gap-4 mb-4">
                                             <InputGroup label="Company" value={exp.company} onChange={(e) => handleArrayChange(index, 'experience', 'company', e.target.value)} />
@@ -274,11 +274,11 @@ const EditProfileModal = ({ isOpen, onClose, userData, onSave }) => {
                                             <InputGroup label="Logo URL" value={exp.logo} onChange={(e) => handleArrayChange(index, 'experience', 'logo', e.target.value)} />
                                         </div>
                                         <div>
-                                            <label className="block text-sm text-slate-400 mb-1">Description</label>
+                                            <label className="block text-sm text-slate-500 mb-1">Description</label>
                                             <textarea
                                                 value={exp.description}
                                                 onChange={(e) => handleArrayChange(index, 'experience', 'description', e.target.value)}
-                                                className="w-full bg-slate-900 border border-white/10 rounded-xl p-3 text-white focus:border-emerald-500 outline-none h-24 resize-none"
+                                                className="w-full bg-white border border-slate-200 rounded-xl p-3 text-slate-900 focus:border-emerald-500 outline-none h-24 resize-none transition-colors"
                                             />
                                         </div>
                                     </div>
@@ -290,11 +290,11 @@ const EditProfileModal = ({ isOpen, onClose, userData, onSave }) => {
                 </div>
 
                 {/* Footer */}
-                <div className="p-6 border-t border-white/10 bg-glass-100 flex justify-end gap-4">
-                    <button onClick={onClose} className="px-6 py-2.5 rounded-xl text-slate-400 hover:text-white font-medium hover:bg-white/5 transition-colors">Cancel</button>
+                <div className="p-6 border-t border-slate-100 bg-slate-50/50 flex justify-end gap-4">
+                    <button onClick={onClose} className="px-6 py-2.5 rounded-xl text-slate-500 hover:text-slate-700 font-medium hover:bg-slate-100 transition-colors">Cancel</button>
                     <button
                         onClick={() => onSave(formData)}
-                        className="px-8 py-2.5 rounded-xl bg-gradient-to-r from-royal-600 to-purple-600 text-white font-bold shadow-lg shadow-purple-900/40 hover:from-royal-500 hover:to-purple-500 transition-all flex items-center gap-2"
+                        className="px-8 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold shadow-sm hover:from-blue-700 hover:to-indigo-700 hover:shadow-md transition-all flex items-center gap-2"
                     >
                         <Save size={18} /> Save Changes
                     </button>
@@ -306,14 +306,14 @@ const EditProfileModal = ({ isOpen, onClose, userData, onSave }) => {
 
 const InputGroup = ({ label, name, value, onChange, placeholder, type = "text" }) => (
     <div>
-        <label className="block text-sm text-slate-400 mb-1 ml-1">{label}</label>
+        <label className="block text-sm text-slate-500 mb-1 ml-1">{label}</label>
         <input
             type={type}
             name={name}
             value={value}
             onChange={onChange}
             placeholder={placeholder}
-            className="w-full bg-slate-800/50 border border-white/10 rounded-xl p-3 text-white focus:border-blue-500 outline-none focus:bg-slate-800 transition-colors"
+            className="w-full bg-white border border-slate-200 rounded-xl p-3 text-slate-900 focus:border-blue-500 outline-none focus:bg-slate-50 transition-colors"
         />
     </div>
 );

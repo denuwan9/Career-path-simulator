@@ -38,9 +38,9 @@ const GravityCard = ({ id, children, className = '', onClick }) => {
             whileDrag={{ scale: 1.1, cursor: 'grabbing', zIndex: 100 }}
             transition={{ type: 'spring', stiffness: 300, damping: 20 }}
             className={`
-                bg-glass-100 backdrop-blur-md border border-white/10 rounded-2xl p-6 cursor-pointer relative overflow-hidden
+                bg-glass-100 backdrop-blur-md border border-slate-200 rounded-2xl p-6 cursor-pointer relative overflow-hidden
                 shadow-glass-sm transition-colors duration-300
-                ${isFocused ? 'bg-glass-200 border-blue-500/30 ring-1 ring-blue-500/30' : 'hover:bg-glass-200 hover:border-white/20'}
+                ${isFocused ? 'bg-glass-200 border-blue-500/50 ring-1 ring-blue-500/30' : 'hover:bg-glass-200 hover:border-slate-300'}
                 ${className}
             `}
         >

@@ -35,10 +35,10 @@ export default {
                 danger: '#EF4444',
                 warning: '#F59E0B',
                 glass: {
-                    100: 'rgba(255, 255, 255, 0.1)',
-                    200: 'rgba(255, 255, 255, 0.2)',
-                    300: 'rgba(255, 255, 255, 0.3)',
-                    dark: 'rgba(0, 0, 0, 0.3)',
+                    100: 'rgba(255, 255, 255, 0.5)',
+                    200: 'rgba(255, 255, 255, 0.7)',
+                    300: 'rgba(255, 255, 255, 0.9)',
+                    dark: 'rgba(0, 0, 0, 0.05)',
                 }
             },
             fontFamily: {
@@ -47,14 +47,14 @@ export default {
             boxShadow: {
                 'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
                 'card': '0 0 0 1px rgba(0, 0, 0, 0.03), 0 2px 8px rgba(0, 0, 0, 0.04)',
-                'glass-sm': '0 4px 30px rgba(0, 0, 0, 0.1)',
-                'glass-md': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
-                'antigravity-sm': '0 10px 30px -10px rgba(0, 0, 0, 0.3)',
-                'antigravity-hover': '0 20px 40px -10px rgba(0, 0, 0, 0.4)',
+                'glass-sm': '0 4px 30px rgba(0, 0, 0, 0.05)',
+                'glass-md': '0 8px 32px 0 rgba(31, 38, 135, 0.1)',
+                'antigravity-sm': '0 10px 30px -10px rgba(0, 0, 0, 0.1)',
+                'antigravity-hover': '0 20px 40px -10px rgba(0, 0, 0, 0.15)',
             },
             backgroundImage: {
-                'abyss-gradient': 'linear-gradient(to bottom, #0f172a, #1e293b, #0f172a)',
-                'glow-mesh': 'radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15), transparent 70%)',
+                'abyss-gradient': 'linear-gradient(to bottom, #f8fafc, #ffffff, #f8fafc)',
+                'glow-mesh': 'radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05), transparent 70%)',
             },
             animation: {
                 'float': 'float 6s ease-in-out infinite',

@@ -133,10 +133,10 @@ const Home = () => {
                     <GravityCard id="stat-bookings" className="h-36 flex flex-col justify-between group">
                         <div className="flex justify-between items-start">
                             <div>
-                                <p className="text-blue-200 font-medium text-sm">Interviews</p>
-                                <h3 className="text-3xl font-bold text-white mt-1">{stats.bookings}/2</h3>
+                                <p className="text-slate-500 font-medium text-sm">Interviews</p>
+                                <h3 className="text-3xl font-bold text-slate-900 mt-1">{stats.bookings}/2</h3>
                             </div>
-                            <div className="p-2.5 bg-blue-500/20 text-blue-300 rounded-xl group-hover:bg-blue-500/30 transition-colors">
+                            <div className="p-2.5 bg-blue-100 text-blue-600 rounded-xl group-hover:bg-blue-200 transition-colors">
                                 <Calendar size={22} />
                             </div>
                         </div>
@@ -148,14 +148,14 @@ const Home = () => {
                     <GravityCard id="stat-plans" className="h-36 flex flex-col justify-between group">
                         <div className="flex justify-between items-start">
                             <div>
-                                <p className="text-purple-200 font-medium text-sm">Study Plans</p>
-                                <h3 className="text-3xl font-bold text-white mt-1">{stats.studyPlans}</h3>
+                                <p className="text-slate-500 font-medium text-sm">Study Plans</p>
+                                <h3 className="text-3xl font-bold text-slate-900 mt-1">{stats.studyPlans}</h3>
                             </div>
-                            <div className="p-2.5 bg-purple-500/20 text-purple-300 rounded-xl group-hover:bg-purple-500/30 transition-colors">
+                            <div className="p-2.5 bg-purple-100 text-purple-600 rounded-xl group-hover:bg-purple-200 transition-colors">
                                 <BookOpen size={22} />
                             </div>
                         </div>
-                        <p className="text-xs text-green-400 flex items-center gap-1 mt-auto bg-green-500/10 px-2 py-1 rounded w-fit">
+                        <p className="text-xs text-green-700 flex items-center gap-1 mt-auto bg-green-100 px-2 py-1 rounded w-fit">
                             <TrendingUp size={14} /> Active
                         </p>
                     </GravityCard>
@@ -165,10 +165,10 @@ const Home = () => {
                     <GravityCard id="stat-profile" className="h-36 flex flex-col justify-between group">
                         <div className="flex justify-between items-start">
                             <div>
-                                <p className="text-blue-200 font-medium text-sm">Profile Status</p>
-                                <h3 className="text-3xl font-bold text-white mt-1">{stats.profileComplete}%</h3>
+                                <p className="text-slate-500 font-medium text-sm">Profile Status</p>
+                                <h3 className="text-3xl font-bold text-slate-900 mt-1">{stats.profileComplete}%</h3>
                             </div>
-                            <div className="p-2.5 bg-royal-500/20 text-royal-300 rounded-xl group-hover:bg-royal-500/30 transition-colors">
+                            <div className="p-2.5 bg-royal-100 text-royal-600 rounded-xl group-hover:bg-royal-200 transition-colors">
                                 <User size={22} />
                             </div>
                         </div>
@@ -177,12 +177,12 @@ const Home = () => {
                 </motion.div>
 
                 <motion.div variants={item}>
-                    <GravityCard id="stat-jobs" className="bg-gradient-to-br from-blue-600/30 to-purple-600/30 border-blue-500/30 h-36 flex flex-col justify-between group hover:border-blue-400/50">
+                    <GravityCard id="stat-jobs" className="bg-gradient-to-br from-blue-50 to-purple-50 border-blue-200 h-36 flex flex-col justify-between group hover:border-blue-300">
                         <div>
-                            <p className="text-blue-100 font-medium text-sm">New Opportunities</p>
-                            <h3 className="text-3xl font-bold text-white mt-1">12+</h3>
+                            <p className="text-slate-600 font-medium text-sm">New Opportunities</p>
+                            <h3 className="text-3xl font-bold text-slate-900 mt-1">12+</h3>
                         </div>
-                        <Link to="/jobs" className="text-white text-sm font-medium flex items-center gap-2 mt-auto bg-white/10 p-2 rounded-lg hover:bg-white/20 transition-all w-fit">
+                        <Link to="/jobs" className="text-slate-900 text-sm font-medium flex items-center gap-2 mt-auto bg-white border border-slate-200 p-2 rounded-lg hover:bg-slate-50 transition-all w-fit shadow-sm">
                             View Openings <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                         </Link>
                     </GravityCard>
@@ -195,75 +195,75 @@ const Home = () => {
                 <div className="lg:col-span-2 space-y-8">
                     {/* Next Up Card */}
                     {upcomingInterview ? (
-                        <GravityCard id="upcoming-interview" className="p-0 overflow-hidden group">
-                            <div className="p-6 bg-gradient-to-r from-blue-900/40 to-royal-900/40">
+                        <GravityCard id="upcoming-interview" className="p-0 overflow-hidden group border-slate-200">
+                            <div className="p-6 bg-white">
                                 <div className="flex justify-between items-center mb-4">
-                                    <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                                        <Clock className="text-blue-400" size={20} /> Antigravity Schedule
+                                    <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                                        <Clock className="text-blue-600" size={20} /> Antigravity Schedule
                                     </h3>
-                                    <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-bold border border-blue-500/20 shadow-[0_0_10px_rgba(59,130,246,0.3)] animate-pulse">LIVE</span>
+                                    <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-bold border border-blue-200 shadow-sm animate-pulse">LIVE</span>
                                 </div>
                                 <div className="flex flex-col md:flex-row items-center gap-6">
-                                    <div className="text-center md:text-left min-w-[100px] bg-white/5 p-4 rounded-2xl border border-white/10 backdrop-blur-sm">
-                                        <p className="text-4xl font-bold text-white tracking-widest">{new Date(upcomingInterview.date).getDate()}</p>
-                                        <p className="text-blue-300 uppercase text-xs font-bold tracking-widest">{new Date(upcomingInterview.date).toLocaleString('default', { month: 'short' })}</p>
+                                    <div className="text-center md:text-left min-w-[100px] bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                                        <p className="text-4xl font-bold text-slate-900 tracking-widest">{new Date(upcomingInterview.date).getDate()}</p>
+                                        <p className="text-blue-600 uppercase text-xs font-bold tracking-widest">{new Date(upcomingInterview.date).toLocaleString('default', { month: 'short' })}</p>
                                     </div>
                                     <div className="flex-1 text-center md:text-left space-y-1">
-                                        <h4 className="text-2xl font-bold text-white">{upcomingInterview.company}</h4>
-                                        <p className="text-blue-400 font-medium text-lg">{upcomingInterview.position}</p>
-                                        <p className="text-sm text-slate-400 flex items-center justify-center md:justify-start gap-2">
+                                        <h4 className="text-2xl font-bold text-slate-900">{upcomingInterview.company}</h4>
+                                        <p className="text-blue-600 font-medium text-lg">{upcomingInterview.position}</p>
+                                        <p className="text-sm text-slate-500 flex items-center justify-center md:justify-start gap-2">
                                             <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
                                             {upcomingInterview.startTime} - {upcomingInterview.endTime}
                                         </p>
                                     </div>
-                                    <Link to="/interviews" className="px-5 py-2.5 bg-royal-600 text-white rounded-xl hover:bg-royal-500 text-sm font-bold shadow-lg shadow-blue-900/20 transition-all hover:scale-105">
+                                    <Link to="/interviews" className="px-5 py-2.5 bg-royal-600 text-white rounded-xl hover:bg-royal-500 text-sm font-bold shadow-lg shadow-blue-900/10 transition-all hover:scale-105">
                                         Join Room
                                     </Link>
                                 </div>
                             </div>
                         </GravityCard>
                     ) : (
-                        <GravityCard id="empty-upcoming" className="p-10 text-center flex flex-col items-center justify-center relative overflow-hidden group">
+                        <GravityCard id="empty-upcoming" className="p-10 text-center flex flex-col items-center justify-center relative overflow-hidden group bg-white border-slate-200">
                             {/* Pulsing Orbital for Empty State */}
                             <div className="mb-6 relative z-10 group-hover:scale-110 transition-transform duration-700">
                                 <PulsingOrbital size="w-24 h-24" color="bg-blue-500" />
                             </div>
 
-                            <h3 className="text-xl font-bold text-white relative z-10">Orbit Clear</h3>
-                            <p className="text-slate-400 mt-2 mb-6 max-w-sm relative z-10">No upcoming interviews detected in your trajectory. Schedule a slot to engage boosters.</p>
+                            <h3 className="text-xl font-bold text-slate-900 relative z-10">Orbit Clear</h3>
+                            <p className="text-slate-500 mt-2 mb-6 max-w-sm relative z-10">No upcoming interviews detected in your trajectory. Schedule a slot to engage boosters.</p>
 
-                            <Link to="/interviews" className="relative z-10 px-8 py-3 bg-white/5 border border-white/10 text-blue-300 rounded-xl hover:bg-white/10 font-bold hover:text-white transition-all hover:border-blue-400/30">
+                            <Link to="/interviews" className="relative z-10 px-8 py-3 bg-white border border-slate-200 text-blue-600 rounded-xl hover:bg-slate-50 font-bold hover:text-blue-700 transition-all shadow-sm group-hover:border-blue-200">
                                 Initialize Schedule
                             </Link>
 
                             {/* Background Glow */}
-                            <div className="absolute inset-0 bg-radial-at-c from-blue-500/5 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-1000"></div>
+                            <div className="absolute inset-0 bg-radial-at-c from-blue-50 to-transparent flex-shrink-0 transition-opacity duration-1000"></div>
                         </GravityCard>
                     )}
 
                     {/* Modules Grid */}
                     <div>
-                        <h3 className="text-lg font-bold text-white mb-6 ml-1 flex items-center gap-2">
+                        <h3 className="text-lg font-bold text-slate-900 mb-6 ml-1 flex items-center gap-2">
                             <span className="w-1 h-6 bg-blue-500 rounded-full"></span>
                             Command Center
                         </h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {[
-                                { title: 'Skill Vector', desc: 'Calibrate technical skills', icon: User, color: 'text-blue-300', bg: 'bg-blue-500/10', border: 'group-hover:border-blue-500/30', link: '/profile' },
-                                { title: 'Study Module', desc: 'Exam readiness status', icon: BookOpen, color: 'text-purple-300', bg: 'bg-purple-500/10', border: 'group-hover:border-purple-500/30', link: '/study-plan' },
-                                { title: 'Career Radar', desc: 'Scan for opportunities', icon: Briefcase, color: 'text-cyan-300', bg: 'bg-cyan-500/10', border: 'group-hover:border-cyan-500/30', link: '/jobs' },
-                                { title: 'Time Warp', desc: 'Manage temporal slots', icon: Calendar, color: 'text-indigo-300', bg: 'bg-indigo-500/10', border: 'group-hover:border-indigo-500/30', link: '/interviews' },
+                                { title: 'Skill Vector', desc: 'Calibrate technical skills', icon: User, color: 'text-blue-600', bg: 'bg-blue-50', border: 'group-hover:border-blue-200', link: '/profile' },
+                                { title: 'Study Module', desc: 'Exam readiness status', icon: BookOpen, color: 'text-purple-600', bg: 'bg-purple-50', border: 'group-hover:border-purple-200', link: '/study-plan' },
+                                { title: 'Career Radar', desc: 'Scan for opportunities', icon: Briefcase, color: 'text-cyan-600', bg: 'bg-cyan-50', border: 'group-hover:border-cyan-200', link: '/jobs' },
+                                { title: 'Time Warp', desc: 'Manage temporal slots', icon: Calendar, color: 'text-indigo-600', bg: 'bg-indigo-50', border: 'group-hover:border-indigo-200', link: '/interviews' },
                             ].map((module, i) => (
                                 <Link to={module.link} key={i}>
-                                    <GravityCard id={`module-${i}`} className={`flex items-center gap-5 p-5 h-full group hover:bg-glass-200 transition-all ${module.border}`}>
-                                        <div className={`w-14 h-14 rounded-2xl ${module.bg} ${module.color} flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-inner`}>
+                                    <GravityCard id={`module-${i}`} className={`flex items-center gap-5 p-5 h-full bg-white group hover:bg-slate-50 transition-all border-slate-200 ${module.border}`}>
+                                        <div className={`w-14 h-14 rounded-2xl ${module.bg} ${module.color} flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.05)]`}>
                                             <module.icon size={26} strokeWidth={1.5} />
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-white text-lg group-hover:text-blue-200 transition-colors">{module.title}</h4>
-                                            <p className="text-sm text-slate-400 font-medium">{module.desc}</p>
+                                            <h4 className="font-bold text-slate-900 text-lg group-hover:text-blue-700 transition-colors">{module.title}</h4>
+                                            <p className="text-sm text-slate-500 font-medium">{module.desc}</p>
                                         </div>
-                                        <div className="ml-auto w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-blue-500 group-hover:text-white transition-all opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0">
+                                        <div className="ml-auto w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 group-hover:text-white group-hover:bg-blue-500 transition-all opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 border border-slate-200">
                                             <ArrowRight size={14} />
                                         </div>
                                     </GravityCard>
@@ -276,38 +276,38 @@ const Home = () => {
                 {/* Right Column: Mini Widgets */}
                 <div className="space-y-6">
                     {/* Quote Widget */}
-                    <div className="bg-glass-100 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-white shadow-glass-lg relative overflow-hidden group">
+                    <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm relative overflow-hidden group">
                         <div className="relative z-10">
-                            <span className="text-8xl font-serif text-blue-500/10 absolute -top-8 -left-4 leading-none">"</span>
-                            <p className="font-light text-xl leading-relaxed italic relative z-10 pt-4 text-blue-100/90">
+                            <span className="text-8xl font-serif text-slate-100 absolute -top-8 -left-4 leading-none">"</span>
+                            <p className="font-light text-xl leading-relaxed italic relative z-10 pt-4 text-slate-700">
                                 The future belongs to those who orbit the beauty of their dreams.
                             </p>
                             <div className="flex items-center gap-3 mt-6">
-                                <div className="w-8 h-px bg-blue-500/50"></div>
-                                <p className="text-slate-400 text-sm font-bold uppercase tracking-widest">Eleanor Roosevelt</p>
+                                <div className="w-8 h-px bg-slate-300"></div>
+                                <p className="text-slate-500 text-sm font-bold uppercase tracking-widest">Eleanor Roosevelt</p>
                             </div>
                         </div>
-                        <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-colors duration-1000"></div>
+                        <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-blue-50 rounded-full blur-3xl group-hover:bg-blue-100 transition-colors duration-1000"></div>
                     </div>
 
                     {/* Progress Widget */}
-                    <GravityCard id="progress-widget" className="p-6">
-                        <h3 className="font-bold text-white mb-6 flex items-center justify-between">
+                    <GravityCard id="progress-widget" className="p-6 bg-white border-slate-200">
+                        <h3 className="font-bold text-slate-900 mb-6 flex items-center justify-between">
                             System Efficiency
-                            <span className="text-xs font-mono text-green-400 bg-green-500/10 px-2 py-1 rounded">OPTIMAL</span>
+                            <span className="text-xs font-mono text-green-700 bg-green-100 px-2 py-1 rounded">OPTIMAL</span>
                         </h3>
                         <div className="space-y-6">
                             <div>
                                 <div className="flex justify-between text-xs font-bold uppercase tracking-wider mb-2">
-                                    <span className="text-royal-300">Profile Resonance</span>
-                                    <span className="text-white">{stats.profileComplete}%</span>
+                                    <span className="text-slate-500">Profile Resonance</span>
+                                    <span className="text-slate-900">{stats.profileComplete}%</span>
                                 </div>
                                 <LiquidProgressBar progress={stats.profileComplete} color="bg-gradient-to-r from-royal-500 to-cyan-500" height="h-2.5" />
                             </div>
                             <div>
                                 <div className="flex justify-between text-xs font-bold uppercase tracking-wider mb-2">
-                                    <span className="text-purple-300">Interview Readiness</span>
-                                    <span className="text-white">{Math.min((stats.bookings / 2) * 100, 100)}%</span>
+                                    <span className="text-slate-500">Interview Readiness</span>
+                                    <span className="text-slate-900">{Math.min((stats.bookings / 2) * 100, 100)}%</span>
                                 </div>
                                 <LiquidProgressBar progress={(stats.bookings / 2) * 100} color="bg-gradient-to-r from-purple-500 to-pink-500" height="h-2.5" />
                             </div>

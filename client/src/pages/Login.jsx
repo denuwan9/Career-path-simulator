@@ -26,7 +26,7 @@ const Login = () => {
         }
     };
 
-    const InputClass = "w-full pl-10 pr-4 py-3 bg-transparent border-b border-white/20 text-white placeholder-blue-300/50 focus:border-blue-400 outline-none transition-all";
+    const InputClass = "w-full pl-10 pr-4 py-3 bg-white border border-slate-200 text-slate-900 placeholder-slate-400 focus:border-blue-500 rounded-lg outline-none transition-all shadow-sm";
 
     return (
         <div className="min-h-screen flex items-center justify-center p-4 relative z-10">
@@ -34,12 +34,12 @@ const Login = () => {
             <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="bg-glass-100 backdrop-blur-xl rounded-3xl shadow-antigravity-hover w-full max-w-md overflow-hidden border border-white/10 relative z-20"
+                className="bg-white rounded-3xl shadow-lg w-full max-w-md overflow-hidden border border-slate-200 relative z-20"
             >
-                <div className="absolute top-0 right-0 -mr-20 -mt-20 w-60 h-60 bg-royal-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
+                <div className="absolute top-0 right-0 -mr-20 -mt-20 w-60 h-60 bg-blue-100 rounded-full blur-3xl animate-pulse-slow"></div>
 
-                <div className="p-8 text-center bg-gradient-to-r from-royal-600/80 to-purple-600/80 text-white border-b border-white/10 relative z-10">
-                    <h2 className="text-3xl font-bold mb-2 tracking-tight">Access Terminal</h2>
+                <div className="p-8 text-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-b border-blue-500 relative z-10">
+                    <h2 className="text-3xl font-bold mb-2 tracking-tight">Welcome Back</h2>
                     <p className="text-blue-100 font-light">Sign in to resume your career trajectory</p>
                 </div>
 
@@ -52,9 +52,9 @@ const Login = () => {
 
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="space-y-1">
-                            <label className="text-sm font-bold text-blue-200 ml-1">Email Address</label>
+                            <label className="text-sm font-bold text-slate-700 ml-1">Email Address</label>
                             <div className="relative group">
-                                <Mail className="absolute left-0 top-1/2 transform -translate-y-1/2 text-blue-400 group-focus-within:text-blue-300 transition-colors" size={20} />
+                                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 group-focus-within:text-blue-500 transition-colors" size={20} />
                                 <input
                                     type="email"
                                     name="email"
@@ -68,9 +68,9 @@ const Login = () => {
                         </div>
 
                         <div className="space-y-1">
-                            <label className="text-sm font-bold text-blue-200 ml-1">Password</label>
+                            <label className="text-sm font-bold text-slate-700 ml-1">Password</label>
                             <div className="relative group">
-                                <Lock className="absolute left-0 top-1/2 transform -translate-y-1/2 text-blue-400 group-focus-within:text-blue-300 transition-colors" size={20} />
+                                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 group-focus-within:text-blue-500 transition-colors" size={20} />
                                 <input
                                     type="password"
                                     name="password"
@@ -85,16 +85,16 @@ const Login = () => {
 
                         <button
                             type="submit"
-                            className="w-full bg-gradient-to-r from-royal-600 to-purple-600 text-white py-3.5 rounded-xl font-bold hover:brightness-110 transition-all shadow-lg shadow-blue-500/20 flex items-center justify-center gap-2 group mt-4 hover:scale-[1.02]"
+                            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3.5 rounded-xl font-bold hover:shadow-md transition-all flex items-center justify-center gap-2 group mt-4 hover:scale-[1.02]"
                         >
                             Sign In <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                         </button>
                     </form>
 
-                    <p className="text-center mt-8 text-slate-400 text-sm">
+                    <p className="text-center mt-8 text-slate-500 text-sm">
                         Don't have an account?{' '}
-                        <Link to="/signup" className="text-blue-400 font-bold hover:text-white transition-colors hover:underline">
-                            Initialize Protocol
+                        <Link to="/signup" className="text-blue-600 font-bold hover:text-blue-700 transition-colors hover:underline">
+                            Create Account
                         </Link>
                     </p>
                 </div>

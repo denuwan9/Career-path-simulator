@@ -8,10 +8,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #0f172a;
-  /* Dark background for Antigravity */
-  color: #f8fafc;
-  /* Text Primary (slate-50) */
+  background-color: #f8fafc;
+  /* Light background for Antigravity */
+  color: #0f172a;
+  /* Text Primary (slate-900) */
 }
 
 code {

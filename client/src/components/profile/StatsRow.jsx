@@ -7,14 +7,14 @@ const StatCard = ({ icon: Icon, label, value, trend, color, delay }) => (
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay }}
-        className="bg-glass-100 border border-white/5 p-4 rounded-2xl flex items-center justify-between group hover:bg-white/5 transition-colors"
+        className="bg-white border border-slate-200 shadow-sm p-4 rounded-2xl flex items-center justify-between group hover:shadow-md transition-shadow"
     >
         <div>
-            <p className="text-slate-400 text-xs font-medium uppercase tracking-wider mb-1">{label}</p>
-            <h4 className="text-2xl font-bold text-white group-hover:scale-105 transition-transform origin-left">{value}</h4>
-            {trend && <span className="text-xs text-green-400 flex items-center gap-1">+{trend}% <TrendingUp size={10} /></span>}
+            <p className="text-slate-500 text-xs font-medium uppercase tracking-wider mb-1">{label}</p>
+            <h4 className="text-2xl font-bold text-slate-900 group-hover:scale-105 transition-transform origin-left">{value}</h4>
+            {trend && <span className="text-xs text-green-600 flex items-center gap-1">+{trend}% <TrendingUp size={10} /></span>}
         </div>
-        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${color} flex items-center justify-center text-white shadow-lg`}>
+        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${color} flex items-center justify-center text-white shadow-sm`}>
             <Icon size={24} />
         </div>
     </motion.div>

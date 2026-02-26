@@ -57,14 +57,14 @@ const Profile = () => {
         }
     };
 
-    if (loading) return <div className="text-white text-center mt-20">Loading profile...</div>;
+    if (loading) return <div className="text-slate-600 text-center mt-20">Loading profile...</div>;
 
     return (
         <div className="relative min-h-screen pb-20">
             {/* Background Particles/Blobs */}
             <div className="fixed inset-0 pointer-events-none overflow-hidden">
-                <div className="absolute top-[10%] left-[20%] w-72 h-72 bg-blue-600/10 rounded-full blur-[100px] animate-pulse-slow" />
-                <div className="absolute bottom-[20%] right-[10%] w-96 h-96 bg-purple-600/10 rounded-full blur-[100px] animate-pulse-slow" style={{ animationDelay: '2s' }} />
+                <div className="absolute top-[10%] left-[20%] w-72 h-72 bg-blue-100 rounded-full blur-3xl animate-pulse-slow" />
+                <div className="absolute bottom-[20%] right-[10%] w-96 h-96 bg-indigo-100 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
