@@ -77,8 +77,8 @@ const Profile = () => {
                 {/* 3. Main Content Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
 
-                    {/* Left Column (Sticky Sidebar feel) */}
-                    <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-24 lg:self-start h-fit">
+                    {/* Left Column (Static instead of Sticky) */}
+                    <div className="lg:col-span-4 space-y-6 h-fit">
                         <AboutCard user={userData} />
                         <SkillsCard user={userData} />
                     </div>

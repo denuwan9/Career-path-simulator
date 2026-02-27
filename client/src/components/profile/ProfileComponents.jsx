@@ -10,15 +10,15 @@ export const ProfileHeader = ({ user, onEdit }) => {
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="col-span-12 relative overflow-hidden rounded-3xl bg-white border border-slate-200 shadow-sm mb-6"
-        >
+            className="col-span-12 relative overflow-hidden rounded-3xl bg-white border border-slate-200 shadow-sm mb-6">
+
             {/* Banner Background */}
-            <div className="h-48 bg-gradient-to-r from-blue-100 to-indigo-100 relative">
+            <div className="h-28 bg-gradient-to-r from-purple-900 to-purple-900 relative">
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent"></div>
             </div>
 
-            <div className="px-8 pb-8 flex flex-col md:flex-row items-end -mt-16 gap-6">
+            <div className="relative z-10 px-8 pb-8 flex flex-col md:flex-row items-end -mt-16 gap-6">
                 {/* Avatar */}
                 <div className="relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-full blur-md opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
@@ -33,8 +33,8 @@ export const ProfileHeader = ({ user, onEdit }) => {
 
                 {/* Main Info */}
                 <div className="flex-1 text-center md:text-left mb-2">
-                    <h1 className="text-4xl font-bold text-slate-900 mb-1 tracking-tight">{user.name}</h1>
-                    <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 text-sm">
+                    <h1 className="text-4xl font-bold text-slate-900 mb-1 tracking-tight capitalize">{user.name}</h1>
+                    <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 text-sm">
                         <span className="text-blue-700 font-medium px-3 py-1 rounded-full bg-blue-50 border border-blue-200">
                             {user.careerField || "Aspiring Professional"}
                         </span>

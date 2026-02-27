@@ -35,7 +35,7 @@ export const TimelineSection = ({ education, experience }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="col-span-12 md:col-span-4 rounded-3xl bg-white border border-slate-200 shadow-sm p-6 h-fit sticky top-24"
+            className="col-span-12 md:col-span-4 rounded-3xl bg-white border border-slate-200 shadow-sm p-6 h-fit"
         >
             {/* Education */}
             <div className="mb-8">

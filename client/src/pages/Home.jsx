@@ -99,7 +99,7 @@ const Home = () => {
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-gradient-to-r from-royal-600 to-purple-600 rounded-3xl p-8 text-white shadow-antigravity-hover relative overflow-hidden z-20"
+                className="bg-gradient-to-l from-royal-900 to-purple-900 rounded-3xl p-8 text-white shadow-antigravity-hover relative overflow-hidden z-20"
             >
                 <div className="relative z-10">
                     <h1 className="text-3xl md:text-4xl font-bold mb-2 tracking-tight">
